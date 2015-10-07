@@ -24,8 +24,13 @@ namespace FlickrTest.Controllers
         /// <returns>A Json object containing the images from the repository</returns>
         /// 
         [HttpPost]
-        public ActionResult GetImages(string tags) { 
-            var flickrRepository = new FlickrRepository();
+        public ActionResult GetImages(string tags, bool cacheFlicker)
+        {
+            dynamic flickrRepository = null;
+            if(cacheFlicker)
+                flickrRepository = new FlickrCacheableRepository();
+            else
+                flickrRepository = new FlickrRepository();
             return Json(flickrRepository.GetImagesByTags(tags), JsonRequestBehavior.AllowGet);
         }
 
