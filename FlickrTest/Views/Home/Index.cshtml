@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row with-top-padding">
+    <div class="medium-12 columns">
+
+        <div class="row">
+            <div class="medium-8 columns clearfix">
+                @Html.TextBox("tags", null, new { placeholder = "Search Images", @class ="left" })
+                <div class="spinner-loader right">
+                    Loading…
+                </div>
+            </div>
+
+            <div class="medium-4 columns clearfix">
+                <a class="button share small radius right">Share...</a>
+            </div>
+        </div>
+
+        <div>
+            <a id="link" href=""></a>
+        </div>
+
+        <h2>Pictures</h2>
+
+        <div id="container">
+        </div>
+
+
+    </div>
+</div>
+

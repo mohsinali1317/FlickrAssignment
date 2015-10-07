@@ -1,0 +1,30 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+.page {
+    background-image: url('/Content/images/background.jpg');
+    min-height: 100%;
+}
+
+.with-top-padding {
+    padding-top: 10px;
+}
+
+.page .button.small.share {
+    height: 2.3125rem;
+    padding-top: 0.7rem;
+    box-shadow: 1px 1px 5px #888888;
+    background-color: #41B1FF;
+}
+
+#tags {
+    width: 90%;
+}
+
+.page .spinner-loader {
+    display: none;
+}
