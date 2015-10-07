@@ -22,6 +22,8 @@ namespace FlickrTest.Controllers
         /// </summary>
         /// <param name="tags">Tags that should be searched for in the repository</param>
         /// <returns>A Json object containing the images from the repository</returns>
+        /// 
+        [HttpPost]
         public ActionResult GetImages(string tags) { 
             var flickrRepository = new FlickrRepository();
             return Json(flickrRepository.GetImagesByTags(tags), JsonRequestBehavior.AllowGet);

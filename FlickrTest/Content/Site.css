@@ -28,3 +28,22 @@
 .page .spinner-loader {
     display: none;
 }
+
+
+.selected-thumb {
+    text-align: center;
+    background: #c0c0c0;
+    border: #a0a0a0 solid 1px;
+    margin: 20px;
+    height:200px;
+    line-height: 200px;
+}
+
+.selected-thumb img {
+    display: inline-block;
+    vertical-align: middle;
+    width:auto;
+    height:auto;
+    max-height:90%;
+    max-width:90%;
+}

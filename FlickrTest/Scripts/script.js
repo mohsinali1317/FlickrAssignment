@@ -18,31 +18,43 @@ $("#tags").keyup(function () {
 
         $(".spinner-loader").show();
 
-        $.getJSON(URL, function (data) {
+
+        $.post(URL, function (data) {
             var container = $("#container");
             container.html("");
 
-            var count = 1;
-            var mainRow = $("<div>");
-            mainRow.addClass("row");
+         //   var mainRow = $("<div>");
+
+
+           // mainRow.addClass("row");
+
+            var ul = $("<ul>");
+            ul.addClass("clearing-thumbs small-block-grid-1 medium-block-grid-3 large-block-grid-5");
+
             $.each(data, function () {
 
                 
 
-                var thumb = $("<div>");
-                thumb.addClass("medium-4 columns img-contianer");
+              //  var thumb = $("<div>");
+                // thumb.addClass("medium-4 columns img-contianer");
+
+                var li = $("<li>");
+                li.addClass("item");
+
                 var image = $("<img>")
                     .attr("src", this.ImageUrl);
+
+                image.addClass("item");
 
                 var title = $("<span>")
                     .html(this.Title);
 
-                thumb.append(title);
-                thumb.append(image);
+                li.append(title);
+                li.append(image);
 
-                mainRow.append(thumb);
+                ul.append(li);
 
-                container.append(mainRow);
+                container.append(ul);
             });
 
             $(".spinner-loader").hide();
