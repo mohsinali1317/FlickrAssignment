@@ -19,12 +19,14 @@ $("#tags").keyup(function () {
 
         var URL = window.location + "/Home/GetImages";
 
-        $("#link").html(URL).attr("href", URL);
+        var tags = $("#tags").val();
+
+        $("#link").html(URL + "?tags=" + tags).attr("href", URL + "?tags=" + tags);
 
         $(".spinner-loader").show();
 
 
-        $.post(URL, { tags: $("#tags").val(), cacheFlicker: cacheFlicker }, function (data) {
+        $.post(URL, { tags: tags, cacheFlicker: cacheFlicker }, function (data) {
             var container = $("#container");
             container.html("");
 
