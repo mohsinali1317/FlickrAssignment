@@ -60,29 +60,28 @@ function storeInImageArray(data) {
         var source = $("<span>")
                     .addClass("source image-item" + "_" + count++);
 
-        // li.append(title);
         li.append(source);
         li.append(image);
-
         ul.append(li);
-
         container.append(ul);
     });
 }
 
 function loadImages() {
-
     $('.image-item').each(function (index, elem) {
         elem.src = imageArray[index];
         if (!elem.complete) {
             $(elem).load(function () {
+                $(elem).hide();
+                $(elem).fadeIn(2000);
                 rescaleImage(elem);
                 $(".image-item_" + index).html("Loaded From Flicker");
             });
         }
         else {
+            $(elem).hide();
+            $(elem).fadeIn(2000);
             rescaleImage(elem);
-
             $(".image-item_" + index).html("Loaded From Cache");
         }
     });
