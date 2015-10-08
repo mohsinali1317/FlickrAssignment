@@ -22,10 +22,9 @@ $("#tags").keyup(function () {
 
         var tags = $("#tags").val();
 
-        $("#link").html(URL + "?tags=" + tags).attr("href", URL + "?tags=" + tags);
+        $("#share").attr("href", URL + "?tags=" + tags);
 
         $(".spinner-loader").show();
-
 
         $.post(URL, { tags: tags, cacheFlicker: cacheFlicker }, function (data) {
             imageArray = [];
@@ -94,3 +93,4 @@ function rescaleImage(elem) {
         $(elem).css('margin-top', margintop);
     }
 }
+

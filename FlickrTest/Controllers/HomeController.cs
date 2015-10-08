@@ -1,5 +1,8 @@
 ﻿using System.Web.Mvc;
 using FlickrTest.Repository;
+using FlickrTest.Models;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace FlickrTest.Controllers
 {
@@ -32,7 +35,18 @@ namespace FlickrTest.Controllers
         [HttpGet]
         public ActionResult GetImages(string tags)
         {
-            return GetJson(tags, false);
+            List<FlickrImage> images = new List<FlickrImage>();
+
+           // dynamic test = JsonConvert.DeserializeObject(GetJson(tags, false).Data());
+
+
+                foreach (var fi in GetJson(tags, false).Data)
+                {
+                    images.Add(fi);
+                }
+
+            ViewBag.Images = images;
+            return View();
         }
 
         public dynamic GetJson(string tags, bool cacheFlicker)

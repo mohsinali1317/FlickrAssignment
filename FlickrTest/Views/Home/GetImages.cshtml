@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Result";
+}
+
+<div class="row with-top-padding">
+    <div class="medium-12 columns">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Image Url</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.Images)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td><a href="@item.ImageUrl" target="_blank" title="@item.Title">@item.ImageUrl</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
